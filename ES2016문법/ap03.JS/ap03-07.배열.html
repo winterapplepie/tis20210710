@@ -198,5 +198,45 @@
                 </li>
             </ol>
         </div>
+        <script>
+            // 배열 선언
+            let arr =  [true, 100, "two"];
+            //RCUD2S: Read. 배열 요소 추가
+            console.log("arr[1]: " + arr[1]);
+            //RCUD2S: Create. 배열 요소 추가
+            /*arr[3] = "three"; arr.push(undefined); arr.push("four"); arr.push("aaa"); console.log(arr);*/
+            arr2 = ["three", undefined, "four", "aaa"];
+            arr3 = arr.concat(arr2);
+            console.log("배열 요소 추가하기: " + arr3);
+            // RCUD2S: Update. 배열 요소 수정
+            arr3[0] = 'update';
+            console.log("Update 배열 요소 수정: "+arr3);
+            //  Delete 배열 요소 삭제
+            arr3.splice(2,1);
+            console.log("Delete 배열 요소 삭제: "+arr3);
+            // Search .filter()
+            let arr4 = [1,3, 3784, 98, 842, 8230];
+            const newFilter = arr4.filter( (value, index, array) => {
+                //debugger;
+                return value >= 100;
+            });
+            //debugger;
+            console.log("Search .newFilter(): " + newFilter);
+            // Sort. 배열 정렬, Search .sort()
+            const arrSort = arr4.sort(function(a,b){
+                return a-b;
+            })
+            console.log("arrSort:" +arrSort);
+            // 배열 복제. map() 메서드 사용법을 학습한다.: Search .map()
+            const arrMap = arr4.map((value,index,array) => {
+                return value + 100;
+            });
+            console.log("배열 복제. map() 메서드 사용법을 학습한다: " + arrMap);
+            // Search .reduce()
+            const arrSum = arr4.reduce((pvalue, cvalue, index, array) =>{
+                return pvalue + cvalue;
+            });
+            console.log("Search .reduce():" + arrSum);
+        </script>
     </body>
 </html>
