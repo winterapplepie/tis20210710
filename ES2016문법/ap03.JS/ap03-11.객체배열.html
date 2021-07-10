@@ -59,6 +59,28 @@
                 </pre>
         </ol>
     </div>
+    <script>
+            var objarray = [
+                { text: 'One', value: 'A' },
+                { text: 'Two', value: 'B' },
+                { text: 'Three', value: 'C' }
+            ];
+            objarray[3] = { text: 'Four', value: 'D' }; // objarray[objarray.length]
+            objarray[1] = { text: '2', value: '2' };
+            console.log(objarray);
+
+            var objarray2 = objarray.filter((value, index, array) =>{
+                return value.text == "One"
+            });
+            console.log(objarray2);
+
+            const findItem = objarray.find(function(item) {
+                return item.text === 'Three'
+            });
+            const idx = objarray.indexOf(findItem);
+            objarray.splice(idx, 1);
+            console.log(objarray);
+    </script>
 </body>
 
 </html>
